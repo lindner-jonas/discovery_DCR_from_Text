@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dcr:definitions xmlns:dcr="http://tk/schema/dcr" xmlns:dcrDi="http://tk/schema/dcrDi" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC">
+  <dcr:dcrGraph id="dcrGraph">
+    <dcr:event id="Event_1gcyiys" role="hospital" description="establish a rating workflow for their doctors" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_0867cu3" role="referee" description="starts a new case regarding a certain doctor by interviewing patients" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_0ns2979" role="director" description="asks an external expert to review the work of the doctor under rating" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_1f57kts" role="expert" description="is not responding in time" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_18b6srz" role="expert" description="sends an expertise" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_0u15yu6" role="director" description="is received by the director" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_0fz3wiu" role="director" description="forwarded to the referee" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_1wc1b3j" role="referee" description="files the results containing the patient interviews" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_1bcrj7u" role="referee" description="files the expertise" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_082dj4l" role="referee" description="creates a report" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_0pkpaak" role="manager" description="fills a check to pay the expenses of the expert" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:relation id="Relation_11zcbwr" type="response" sourceRef="Event_1f57kts" targetRef="Event_0ns2979" />
+    <dcr:relation id="Relation_0lhzerj" type="condition" sourceRef="Event_18b6srz" targetRef="Event_0u15yu6" />
+    <dcr:relation id="Relation_1qztoln" type="condition" sourceRef="Event_0u15yu6" targetRef="Event_0fz3wiu" />
+    <dcr:relation id="Relation_0u7nj1l" type="condition" sourceRef="Event_1wc1b3j" targetRef="Event_082dj4l" />
+    <dcr:relation id="Relation_0ud3kyr" type="condition" sourceRef="Event_1bcrj7u" targetRef="Event_082dj4l" />
+  </dcr:dcrGraph>
+  <dcrDi:dcrRootBoard id="RootBoard">
+    <dcrDi:dcrPlane id="Plane" boardElement="dcrGraph">
+      <dcrDi:relation id="Relation_11zcbwr_di" boardElement="Relation_11zcbwr">
+        <dcrDi:waypoint x="600" y="495" />
+        <dcrDi:waypoint x="440" y="495" />
+      </dcrDi:relation>
+      <dcrDi:relation id="Relation_0lhzerj_di" boardElement="Relation_0lhzerj">
+        <dcrDi:waypoint x="440" y="735" />
+        <dcrDi:waypoint x="600" y="735" />
+      </dcrDi:relation>
+      <dcrDi:relation id="Relation_1qztoln_di" boardElement="Relation_1qztoln">
+        <dcrDi:waypoint x="730" y="735" />
+        <dcrDi:waypoint x="860" y="735" />
+      </dcrDi:relation>
+      <dcrDi:relation id="Relation_0u7nj1l_di" boardElement="Relation_0u7nj1l">
+        <dcrDi:waypoint x="440" y="965" />
+        <dcrDi:waypoint x="520" y="965" />
+        <dcrDi:waypoint x="520" y="1065" />
+        <dcrDi:waypoint x="600" y="1065" />
+      </dcrDi:relation>
+      <dcrDi:relation id="Relation_0ud3kyr_di" boardElement="Relation_0ud3kyr">
+        <dcrDi:waypoint x="440" y="1165" />
+        <dcrDi:waypoint x="520" y="1165" />
+        <dcrDi:waypoint x="520" y="1065" />
+        <dcrDi:waypoint x="600" y="1065" />
+      </dcrDi:relation>
+      <dcrDi:dcrShape id="Event_1gcyiys_di" boardElement="Event_1gcyiys">
+        <dc:Bounds x="310" y="160" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_0867cu3_di" boardElement="Event_0867cu3">
+        <dc:Bounds x="600" y="160" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_0ns2979_di" boardElement="Event_0ns2979">
+        <dc:Bounds x="310" y="420" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_1f57kts_di" boardElement="Event_1f57kts">
+        <dc:Bounds x="600" y="420" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_18b6srz_di" boardElement="Event_18b6srz">
+        <dc:Bounds x="310" y="660" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_0u15yu6_di" boardElement="Event_0u15yu6">
+        <dc:Bounds x="600" y="660" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_0fz3wiu_di" boardElement="Event_0fz3wiu">
+        <dc:Bounds x="860" y="660" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_1wc1b3j_di" boardElement="Event_1wc1b3j">
+        <dc:Bounds x="310" y="890" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_1bcrj7u_di" boardElement="Event_1bcrj7u">
+        <dc:Bounds x="310" y="1090" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_082dj4l_di" boardElement="Event_082dj4l">
+        <dc:Bounds x="600" y="990" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_0pkpaak_di" boardElement="Event_0pkpaak">
+        <dc:Bounds x="860" y="990" width="130" height="150" />
+      </dcrDi:dcrShape>
+    </dcrDi:dcrPlane>
+  </dcrDi:dcrRootBoard>
+</dcr:definitions>

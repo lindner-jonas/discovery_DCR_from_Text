@@ -1,0 +1,52 @@
+<dcrgraph title="DCR" dataTypesStatus="hide" filterLevel="-1" insightFilter="false" zoomLevel="0" formGroupStyle="Normal" formLayoutStyle="Horizontal" formShowPendingCount="true" graphBG="#f1f6fe" graphType="0" exercise="false" version="1.1">
+    <meta>
+        <graph id="2000185" hash="9EAA314408AE6F44FB59B584701F0836" guid="A5DC21E9-D110-494F-BDB0-C6DD17DF419C"  OwnerId="161721" categoryId="9184" categoryTitle="Default"/>
+        <revision id="4895723" type="medium" date="2025-07-31T14:04:21.110"/>
+        <organization id="18" name="DTU - Danish Technical University"/>
+    </meta>
+    <specification>
+        <resources>
+            <events/>
+            <subProcesses/>
+            <distribution/>
+            <labels/>
+            <labelMappings/>
+            <expressions/>
+            <variables/>
+            <variableAccesses>
+                <writeAccesses/>
+            </variableAccesses>
+            <custom>
+                <keywords/>
+                <roles/>
+                <kpis/>
+                <groups/>
+                <phases/>
+                <eventTypes/>
+                <eventParameters/>
+            </custom>
+        </resources>
+        <constraints>
+            <conditions/>
+            <responses/>
+            <coresponses/>
+            <excludes/>
+            <includes/>
+            <milestones/>
+            <updates/>
+            <spawns/>
+            <templateSpawns/>
+        </constraints>
+    </specification>
+    <runtime>
+        <custom>
+            <globalMarking/>
+        </custom>
+        <marking>
+            <globalStore/>
+            <executed/>
+            <included/>
+            <pendingResponses/>
+        </marking>
+    </runtime>
+</dcrgraph>

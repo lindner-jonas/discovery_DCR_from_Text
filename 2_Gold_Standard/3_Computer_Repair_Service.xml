@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dcr:definitions xmlns:dcr="http://tk/schema/dcr" xmlns:dcrDi="http://tk/schema/dcrDi" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC">
+  <dcr:dcrGraph id="dcrGraph">
+    <dcr:event id="Event_02lp9t2" role="customer" description="brings in a defective computer" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_0j2q7zn" role="CRS" description="checks the defect" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_19tk7va" role="CRS" description="hands out a repair cost calculation back" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_0mqsthp" role="customer" description="decides that the costs are acceptable" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_0musuv1" description="continue the process" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_1ox4k1w" role="customer" description="takes her computer home unrepaired" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_0uqntcv" role="CRS" description="check the hardware" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_13ipmx9" role="CRS" description="repair the hardware" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_0v2vl8z" role="CRS" description="checks the software" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_1dzkf3c" role="CRS" description="configures the software" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_1df1c0f" role="CRS" description="test proper system functionality" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_0fxnml1" role="CRS" description="detect an error" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_1fms6se" role="CRS" description="execute another arbitrary repair activity" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_0qq52fv" role="CRS" description="finish the repair" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:relation id="Relation_18ebdqh" type="condition" sourceRef="Event_02lp9t2" targetRef="Event_0j2q7zn" />
+    <dcr:relation id="Relation_1fcs410" type="condition" sourceRef="Event_0j2q7zn" targetRef="Event_19tk7va" />
+    <dcr:relation id="Relation_1d95l1j" type="condition" sourceRef="Event_0mqsthp" targetRef="Event_0musuv1" />
+    <dcr:relation id="Relation_03vjc82" type="exclude" sourceRef="Event_0musuv1" targetRef="Event_1ox4k1w" />
+    <dcr:relation id="Relation_0l795qq" type="exclude" sourceRef="Event_1ox4k1w" targetRef="Event_0musuv1" />
+    <dcr:relation id="Relation_11pg1bs" type="response" sourceRef="Event_0uqntcv" targetRef="Event_1df1c0f" />
+    <dcr:relation id="Relation_15f8xss" type="response" sourceRef="Event_13ipmx9" targetRef="Event_1df1c0f" />
+    <dcr:relation id="Relation_1y6jt2w" type="response" sourceRef="Event_1dzkf3c" targetRef="Event_1df1c0f" />
+    <dcr:relation id="Relation_0q9lne3" type="response" sourceRef="Event_0v2vl8z" targetRef="Event_1df1c0f" />
+    <dcr:relation id="Relation_09jx2wd" type="condition" sourceRef="Event_0fxnml1" targetRef="Event_1fms6se" />
+    <dcr:relation id="Relation_0tbaj10" type="exclude" sourceRef="Event_1fms6se" targetRef="Event_0qq52fv" />
+    <dcr:relation id="Relation_11cx92r" type="exclude" sourceRef="Event_0qq52fv" targetRef="Event_1fms6se" />
+  </dcr:dcrGraph>
+  <dcrDi:dcrRootBoard id="RootBoard">
+    <dcrDi:dcrPlane id="Plane" boardElement="dcrGraph">
+      <dcrDi:relation id="Relation_18ebdqh_di" boardElement="Relation_18ebdqh">
+        <dcrDi:waypoint x="730" y="395" />
+        <dcrDi:waypoint x="780" y="395" />
+      </dcrDi:relation>
+      <dcrDi:relation id="Relation_1fcs410_di" boardElement="Relation_1fcs410">
+        <dcrDi:waypoint x="910" y="395" />
+        <dcrDi:waypoint x="970" y="395" />
+      </dcrDi:relation>
+      <dcrDi:relation id="Relation_1d95l1j_di" boardElement="Relation_1d95l1j">
+        <dcrDi:waypoint x="730" y="615" />
+        <dcrDi:waypoint x="780" y="615" />
+      </dcrDi:relation>
+      <dcrDi:relation id="Relation_03vjc82_di" boardElement="Relation_03vjc82">
+        <dcrDi:waypoint x="910" y="615" />
+        <dcrDi:waypoint x="970" y="615" />
+      </dcrDi:relation>
+      <dcrDi:relation id="Relation_0l795qq_di" boardElement="Relation_0l795qq">
+        <dcrDi:waypoint x="970" y="640" />
+        <dcrDi:waypoint x="910" y="640" />
+      </dcrDi:relation>
+      <dcrDi:relation id="Relation_11pg1bs_di" boardElement="Relation_11pg1bs">
+        <dcrDi:waypoint x="730" y="825" />
+        <dcrDi:waypoint x="755" y="825" />
+        <dcrDi:waypoint x="755" y="935" />
+        <dcrDi:waypoint x="780" y="935" />
+      </dcrDi:relation>
+      <dcrDi:relation id="Relation_15f8xss_di" boardElement="Relation_15f8xss">
+        <dcrDi:waypoint x="970" y="825" />
+        <dcrDi:waypoint x="940" y="825" />
+        <dcrDi:waypoint x="940" y="935" />
+        <dcrDi:waypoint x="910" y="935" />
+      </dcrDi:relation>
+      <dcrDi:relation id="Relation_1y6jt2w_di" boardElement="Relation_1y6jt2w">
+        <dcrDi:waypoint x="970" y="1025" />
+        <dcrDi:waypoint x="940" y="1025" />
+        <dcrDi:waypoint x="940" y="935" />
+        <dcrDi:waypoint x="910" y="935" />
+      </dcrDi:relation>
+      <dcrDi:relation id="Relation_0q9lne3_di" boardElement="Relation_0q9lne3">
+        <dcrDi:waypoint x="730" y="1025" />
+        <dcrDi:waypoint x="755" y="1025" />
+        <dcrDi:waypoint x="755" y="935" />
+        <dcrDi:waypoint x="780" y="935" />
+      </dcrDi:relation>
+      <dcrDi:relation id="Relation_09jx2wd_di" boardElement="Relation_09jx2wd">
+        <dcrDi:waypoint x="730" y="1245" />
+        <dcrDi:waypoint x="780" y="1245" />
+      </dcrDi:relation>
+      <dcrDi:relation id="Relation_0tbaj10_di" boardElement="Relation_0tbaj10">
+        <dcrDi:waypoint x="910" y="1230" />
+        <dcrDi:waypoint x="970" y="1230" />
+      </dcrDi:relation>
+      <dcrDi:relation id="Relation_11cx92r_di" boardElement="Relation_11cx92r">
+        <dcrDi:waypoint x="970" y="1260" />
+        <dcrDi:waypoint x="910" y="1260" />
+      </dcrDi:relation>
+      <dcrDi:dcrShape id="Event_0musuv1_di" boardElement="Event_0musuv1">
+        <dc:Bounds x="780" y="540" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_1ox4k1w_di" boardElement="Event_1ox4k1w">
+        <dc:Bounds x="970" y="540" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_0mqsthp_di" boardElement="Event_0mqsthp">
+        <dc:Bounds x="600" y="540" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_19tk7va_di" boardElement="Event_19tk7va">
+        <dc:Bounds x="970" y="320" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_0j2q7zn_di" boardElement="Event_0j2q7zn">
+        <dc:Bounds x="780" y="320" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_02lp9t2_di" boardElement="Event_02lp9t2">
+        <dc:Bounds x="600" y="320" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_0uqntcv_di" boardElement="Event_0uqntcv">
+        <dc:Bounds x="600" y="750" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_0v2vl8z_di" boardElement="Event_0v2vl8z">
+        <dc:Bounds x="600" y="950" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_13ipmx9_di" boardElement="Event_13ipmx9">
+        <dc:Bounds x="970" y="750" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_1df1c0f_di" boardElement="Event_1df1c0f">
+        <dc:Bounds x="780" y="860" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_1dzkf3c_di" boardElement="Event_1dzkf3c">
+        <dc:Bounds x="970" y="950" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_0fxnml1_di" boardElement="Event_0fxnml1">
+        <dc:Bounds x="600" y="1170" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_1fms6se_di" boardElement="Event_1fms6se">
+        <dc:Bounds x="780" y="1170" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_0qq52fv_di" boardElement="Event_0qq52fv">
+        <dc:Bounds x="970" y="1170" width="130" height="150" />
+      </dcrDi:dcrShape>
+    </dcrDi:dcrPlane>
+  </dcrDi:dcrRootBoard>
+</dcr:definitions>

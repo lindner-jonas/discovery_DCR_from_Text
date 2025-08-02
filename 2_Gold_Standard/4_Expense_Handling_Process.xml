@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dcr:definitions xmlns:dcr="http://tk/schema/dcr" xmlns:dcrDi="http://tk/schema/dcrDi" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC">
+  <dcr:dcrGraph id="dcrGraph">
+    <dcr:event id="Event_0utuuh0" role="Employee" description="creates an expense report" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_0s6sfnl" role="Finance" description="pay out the money within one week" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_0ohi0gz" role="Manager" description="approve the expense report" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_1yw5wz3" role="Manager" description="rejects the expense report" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_0mtc2au" role="Employee" description="redraw the expense report" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:event id="Event_149bfgi" description="close the case" included="true" executed="false" pending="false" enabled="false" />
+    <dcr:relation id="Relation_11zob5w" type="response" sourceRef="Event_0utuuh0" targetRef="Event_0s6sfnl" />
+    <dcr:relation id="Relation_0su626m" type="response" sourceRef="Event_0utuuh0" targetRef="Event_0ohi0gz" />
+    <dcr:relation id="Relation_1efrf2x" type="condition" sourceRef="Event_0s6sfnl" targetRef="Event_149bfgi" />
+    <dcr:relation id="Relation_0jww924" type="milestone" sourceRef="Event_0ohi0gz" targetRef="Event_0s6sfnl" />
+    <dcr:relation id="Relation_1lihump" type="response" sourceRef="Event_1yw5wz3" targetRef="Event_0ohi0gz" />
+    <dcr:relation id="Relation_1lz662j" type="response" sourceRef="Event_0mtc2au" targetRef="Event_149bfgi" />
+  </dcr:dcrGraph>
+  <dcrDi:dcrRootBoard id="RootBoard">
+    <dcrDi:dcrPlane id="Plane" boardElement="dcrGraph">
+      <dcrDi:relation id="Relation_11zob5w_di" boardElement="Relation_11zob5w">
+        <dcrDi:waypoint x="870" y="555" />
+        <dcrDi:waypoint x="1060" y="555" />
+      </dcrDi:relation>
+      <dcrDi:relation id="Relation_0su626m_di" boardElement="Relation_0su626m">
+        <dcrDi:waypoint x="870" y="510" />
+        <dcrDi:waypoint x="940" y="510" />
+        <dcrDi:waypoint x="940" y="370" />
+        <dcrDi:waypoint x="1060" y="370" />
+      </dcrDi:relation>
+      <dcrDi:relation id="Relation_1efrf2x_di" boardElement="Relation_1efrf2x">
+        <dcrDi:waypoint x="1060" y="590" />
+        <dcrDi:waypoint x="940" y="590" />
+        <dcrDi:waypoint x="940" y="775" />
+        <dcrDi:waypoint x="1060" y="775" />
+      </dcrDi:relation>
+      <dcrDi:relation id="Relation_0jww924_di" boardElement="Relation_0jww924">
+        <dcrDi:waypoint x="1125" y="410" />
+        <dcrDi:waypoint x="1125" y="480" />
+      </dcrDi:relation>
+      <dcrDi:relation id="Relation_1lihump_di" boardElement="Relation_1lihump">
+        <dcrDi:waypoint x="870" y="320" />
+        <dcrDi:waypoint x="1060" y="320" />
+      </dcrDi:relation>
+      <dcrDi:relation id="Relation_1lz662j_di" boardElement="Relation_1lz662j">
+        <dcrDi:waypoint x="870" y="800" />
+        <dcrDi:waypoint x="1060" y="800" />
+      </dcrDi:relation>
+      <dcrDi:dcrShape id="Event_149bfgi_di" boardElement="Event_149bfgi">
+        <dc:Bounds x="1060" y="700" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_0s6sfnl_di" boardElement="Event_0s6sfnl">
+        <dc:Bounds x="1060" y="480" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_0ohi0gz_di" boardElement="Event_0ohi0gz">
+        <dc:Bounds x="1060" y="260" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_1yw5wz3_di" boardElement="Event_1yw5wz3">
+        <dc:Bounds x="740" y="260" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_0utuuh0_di" boardElement="Event_0utuuh0">
+        <dc:Bounds x="740" y="480" width="130" height="150" />
+      </dcrDi:dcrShape>
+      <dcrDi:dcrShape id="Event_0mtc2au_di" boardElement="Event_0mtc2au">
+        <dc:Bounds x="740" y="700" width="130" height="150" />
+      </dcrDi:dcrShape>
+    </dcrDi:dcrPlane>
+  </dcrDi:dcrRootBoard>
+</dcr:definitions>

@@ -1,0 +1,57 @@
+1. Process Methodology
+A major benefit of DCR Processes is the way processes are discovered and defined. DCR stands for "Dynamic Condition Response".
+In traditional flow based methods using process notations such as BPMN, you have to identify exactly where the process start and end as well as all the steps and paths in order to complete the process. Collecting such knowledge takes a long time and you cannot digitalize your process before the flow has been defined from start to end.
+DCR Processes are faster to work with as you can digitalize the process incrementally, based on just a few pieces of the process known. Once digitalized you can learn from experience what people do and refine the process based on actual experience. The D in DCR Process stands for dynamic, which means that during the digitalized process the user can even add new activities and rules meeting the need in the actual instance of the process.
+When dealing with processes start focusing on who is involved, the roles, and the work they do, the activities. You might be surprised that even in a large group of people there will be little discussion about this. Of course naming convention will be challenged and some activities might be broken down to more details by some, why others refer to it as a group.
+Secondly, ask people, individually, to create example flows of how the process could be executed. You as well as the participants will most likely be surprised that there is a huge diversity in how processes are in fact executed. Instead of looking for the classical process standardization and streamlining trying to find the happy path, simply accept the diversity and proceed.
+As a final step ask for the rules that governs the process.
+If some activity, A, always occur before another activity, B, ask if there is a rule that states that before B can be done, A must have been done. This is a condition type of rule. As an example, you cannot pay the invoice, before the approval has been completed.
+If some activity, C, always occur after another activity, D, ask if there is a rule that states that whenever C is done, then D must be done later. This is a response type of rule. As an example, whenever a payment is approved, the payment must be completed.
+
+
+
+2. Activities
+An activity is a task that needs to be accomplished within a defined period of time or by a deadline to work towards work-related goals. Activities can be linked together using rules to create dependencies.
+An activity is the core of a business process, the work being done in order to reach a goal.
+
+2.1 Attributes
+An activity holds several different attributes. Each attribute has three state-values, It can have rules to other activities, It can have a name, role(s) assigned to it, a description, and be part of tags and a level.
+State-Values
+
+The three Boolean states that every activity has are:
+    Included
+    Pending
+    Executed
+
+All the rules are based on these values.
+
+3. Rules 
+A Business rule describes the relationship between one activity and another. Business rules are sometimes also called "relations", or simply "arrows".
+3.1 Type of business rules:
+a. Condition
+The Condition creates a rule between an activity A and an activity B such that B can only occur if first A has occured.  In that sense, rule type Condition defines a prohibition, or a precondition for Activity B. Before Activity B can occur, Activity A must have happened, or Activity B must have been excluded. Activity B could for instance be “Prescribe medicine”. For that to happen a medical examination has to take place, which could be activity A.
+b. Milestone
+The Milestone connection creates a rule between an activity A and an activity B such that B can occur initially. But if A becomes pending for a response connection by another activity C, then B cannot occur until A has ocurred.
+A Milestone is simular to a Condition. A condition refers to first time execution of an activity whereas a milestone refers to future executions of an activity, i.e. block if the previous activity has become pending again. In that sense, rule type Milestone can be understood as a reaction chain. Initially, Activity B is included among the possible actions, but if Activity A becomes pending, then Activity B cannot occur until Activity A has occured. Activity B could for instance be “Prescribe medicine” which normally happens after activity D, “Medical examination”. But activity C, “further examination needed”, becomes activated instead, then activity A, “2nd medical examination” has to happen before any medicine can be prescribed (activity B).
+
+c. Response 
+The Response rule creates a rule between an activity A and an activity B such that activity B has to occur, at least once, at some point after activity A has occurred. Activity B can occur even if activity A never occurs. But if A, then B. In that sense, rule type Response defines an obligation for Activity B. If Activity A has happened, then Activity B must occur or be excluded. If activity A is e.g. a broken leg, then an examination (Activity B) must take place at least once.
+d. Include
+The Include connection creates a rule between an activity A and an activity B such that the occurrence of activity A makes possible the occurrence of activity B if it wasn’t previously included in the workflow. In that sense, rule type Include defines relevance of an activity. After executing Activity A, Activity B is included among the possible actions to take. This inclusion of Activity B does however not deem its necessity. Activity B could be a “Perform medical procedure” which has been previously rejected by a physician. Activity A could be an approval from a physician with more seniority than the one that first rejected the medical procedure.
+e. Exclude
+The Exclude connection creates a rule between an activity A and an activity B such that B cannot occur if first A has occured. In that sense, rule type Exclude defines irrelevance of an activity. The result of executing activity A is that activity B becomes excluded. Activity A could for instance be “Reject medical procedure” and B “Perform medical procedure”. The exclusion can be cancelled out if an activity with an include connection to B occurs.
+
+
+
+
+4. Advanced topics
+4.1 Nesting
+Nesting is the classical way of grouping events together.
+Nesting underlies some rules:
+a. An Activity can be nested in another Activity or Process
+b. A parent Activity can be nested to other parent or child Activities
+c. A process cannot be nested in an Activity
+d. A process can be nested in another Process
+4.2 Sub-processes
+Single instance sub-process – a new way of “grouping” events which is more intuitively. Once the grouping is accepted, i.e. no pending events exists, the sub-process is considered done.
+The main difference between nesting and sub-process is that in nesting all events must be executed before you can proceed, while for sub-processes the process must be in accepting mode to continue.

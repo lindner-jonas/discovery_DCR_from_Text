@@ -1,0 +1,34 @@
+Numbers - Generated: Roles=32, Activities=129, Rules=85
+Numbers - Gold: Roles=41, Activities=215, Rules=188
+
+Roles
+TP: 22, FP: 10, TN: 0, FN: 18 
+precision:0.6875
+recall: 0.5500
+accuracy: 0.4400
+jaccard: 0.4400
+f1: 0.6111
+
+Activities
+TP: 128, FP: 1, TN: 0, FN: 28 
+precision:0.9922
+recall: 0.8205
+accuracy: 0.8153
+jaccard: 0.8153
+f1: 0.8982
+
+Activity-Role-Assignment
+TP: 97, FP: 90, TN: 0, FN: 28 
+precision:0.5187
+recall: 0.7760
+accuracy: 0.4512
+jaccard: 0.4512
+f1: 0.6218
+
+Constraints
+TP: 15, FP: 70, TN: 0, FN: 163 
+precision:0.1765
+recall: 0.0843
+accuracy: 0.0605
+jaccard: 0.0605
+f1: 0.1141

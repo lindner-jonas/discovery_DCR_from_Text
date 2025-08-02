@@ -1,0 +1,243 @@
+<dcrgraph title="DCR" dataTypesStatus="hide" filterLevel="-1" insightFilter="false" zoomLevel="0" formGroupStyle="Normal" formLayoutStyle="Horizontal" formShowPendingCount="true" graphBG="#f1f6fe" graphType="0" exercise="false" version="1.1">
+    <meta>
+        <graph id="2000185" hash="B3648CCF3A06BE8CF45601D0B38C8022" guid="A5DC21E9-D110-494F-BDB0-C6DD17DF419C"  OwnerId="161721" categoryId="9184" categoryTitle="Default"/>
+        <revision id="4895552" type="medium" date="2025-07-31T13:54:52.197"/>
+        <organization id="18" name="DTU - Danish Technical University"/>
+    </meta>
+    <specification>
+        <resources>
+            <events>
+                <event id="A1">
+                    <precondition message=""/>
+                    <custom>
+                        <visualization>
+                            <location xLoc="10" yLoc="60"/>
+                            <colors bg="#f9f7ed" textStroke="#000000" stroke="#cccccc"/>
+                        </visualization>
+                        <roles>
+                            <role>customer</role>
+                        </roles>
+                        <readRoles>
+                            <readRole/>
+                        </readRoles>
+                        <groups>
+                            <group/>
+                        </groups>
+                        <phases>
+                            <phase/>
+                        </phases>
+                        <eventType/>
+                        <eventScope>private</eventScope>
+                        <eventTypeData/>
+                        <eventDescription/>
+                        <purpose/>
+                        <guide/>
+                        <insight use="false"/>
+                        <level>1</level>
+                        <sequence>1</sequence>
+                        <costs>0</costs>
+                        <eventData/>
+                        <interfaces/>
+                    </custom>
+                </event>
+                <event id="A2">
+                    <precondition message=""/>
+                    <custom>
+                        <visualization>
+                            <location xLoc="130" yLoc="60"/>
+                            <colors bg="#f9f7ed" textStroke="#000000" stroke="#cccccc"/>
+                        </visualization>
+                        <roles>
+                            <role>customer</role>
+                        </roles>
+                        <readRoles>
+                            <readRole/>
+                        </readRoles>
+                        <groups>
+                            <group/>
+                        </groups>
+                        <phases>
+                            <phase/>
+                        </phases>
+                        <eventType/>
+                        <eventScope>private</eventScope>
+                        <eventTypeData/>
+                        <eventDescription/>
+                        <purpose/>
+                        <guide/>
+                        <insight use="false"/>
+                        <level>1</level>
+                        <sequence>2</sequence>
+                        <costs>0</costs>
+                        <eventData/>
+                        <interfaces/>
+                    </custom>
+                </event>
+                <event id="A3">
+                    <precondition message=""/>
+                    <custom>
+                        <visualization>
+                            <location xLoc="250" yLoc="60"/>
+                            <colors bg="#f9f7ed" textStroke="#000000" stroke="#cccccc"/>
+                        </visualization>
+                        <roles>
+                            <role>she</role>
+                        </roles>
+                        <readRoles>
+                            <readRole/>
+                        </readRoles>
+                        <groups>
+                            <group/>
+                        </groups>
+                        <phases>
+                            <phase/>
+                        </phases>
+                        <eventType/>
+                        <eventScope>private</eventScope>
+                        <eventTypeData/>
+                        <eventDescription/>
+                        <purpose/>
+                        <guide/>
+                        <insight use="false"/>
+                        <level>1</level>
+                        <sequence>3</sequence>
+                        <costs>0</costs>
+                        <eventData/>
+                        <interfaces/>
+                    </custom>
+                </event>
+                <event id="A4">
+                    <precondition message=""/>
+                    <custom>
+                        <visualization>
+                            <location xLoc="370" yLoc="60"/>
+                            <colors bg="#f9f7ed" textStroke="#000000" stroke="#cccccc"/>
+                        </visualization>
+                        <roles>
+                            <role>process</role>
+                        </roles>
+                        <readRoles>
+                            <readRole/>
+                        </readRoles>
+                        <groups>
+                            <group/>
+                        </groups>
+                        <phases>
+                            <phase/>
+                        </phases>
+                        <eventType/>
+                        <eventScope>private</eventScope>
+                        <eventTypeData/>
+                        <eventDescription/>
+                        <purpose/>
+                        <guide/>
+                        <insight use="false"/>
+                        <level>1</level>
+                        <sequence>4</sequence>
+                        <costs>0</costs>
+                        <eventData/>
+                        <interfaces/>
+                    </custom>
+                </event>
+                <event id="A5">
+                    <precondition message=""/>
+                    <custom>
+                        <visualization>
+                            <location xLoc="490" yLoc="60"/>
+                            <colors bg="#f9f7ed" textStroke="#000000" stroke="#cccccc"/>
+                        </visualization>
+                        <roles>
+                            <role>repair</role>
+                        </roles>
+                        <readRoles>
+                            <readRole/>
+                        </readRoles>
+                        <groups>
+                            <group/>
+                        </groups>
+                        <phases>
+                            <phase/>
+                        </phases>
+                        <eventType/>
+                        <eventScope>private</eventScope>
+                        <eventTypeData/>
+                        <eventDescription/>
+                        <purpose/>
+                        <guide/>
+                        <insight use="false"/>
+                        <level>1</level>
+                        <sequence>5</sequence>
+                        <costs>0</costs>
+                        <eventData/>
+                        <interfaces/>
+                    </custom>
+                </event>
+            </events>
+            <subProcesses/>
+            <distribution/>
+            <labels>
+                <label id="brings in a defective computer"/>
+                <label id="decides that the costs"/>
+                <label id="takes her computer home unrepaired"/>
+                <label id="process continues"/>
+                <label id="consists of two activities, which are executed, in"/>
+            </labels>
+            <labelMappings>
+                <labelMapping eventId="A1" labelId="brings in a defective computer"/>
+                <labelMapping eventId="A2" labelId="decides that the costs"/>
+                <labelMapping eventId="A3" labelId="takes her computer home unrepaired"/>
+                <labelMapping eventId="A4" labelId="process continues"/>
+                <labelMapping eventId="A5" labelId="consists of two activities, which are executed, in"/>
+            </labelMappings>
+            <expressions/>
+            <variables/>
+            <variableAccesses>
+                <writeAccesses/>
+            </variableAccesses>
+            <custom>
+                <keywords/>
+                <roles>
+                    <role description="" specification="">computer</role>
+                    <role description="" specification="">customer</role>
+                    <role description="" specification="">she</role>
+                    <role description="" specification="">process</role>
+                    <role description="" specification="">repair</role>
+                    <role description="" specification="">system</role>
+                </roles>
+                <kpis/>
+                <groups/>
+                <phases/>
+                <eventTypes/>
+                <eventParameters/>
+            </custom>
+        </resources>
+        <constraints>
+            <conditions/>
+            <responses/>
+            <coresponses/>
+            <excludes/>
+            <includes/>
+            <milestones/>
+            <updates/>
+            <spawns/>
+            <templateSpawns/>
+        </constraints>
+    </specification>
+    <runtime>
+        <custom>
+            <globalMarking/>
+        </custom>
+        <marking>
+            <globalStore/>
+            <executed/>
+            <included>
+                <event id="A1"/>
+                <event id="A2"/>
+                <event id="A3"/>
+                <event id="A4"/>
+                <event id="A5"/>
+            </included>
+            <pendingResponses/>
+        </marking>
+    </runtime>
+</dcrgraph>
