@@ -135,11 +135,11 @@ The results are saved to `7_External_Validation/External_Validation.txt`.
 
 The results for the initial experiments with Llama3.1-8B and Llama3.2-3B were run with access to 48 threads of two CPUs (EPYC 7302 16c/32t 3.0 GHz) and max. 512GB of RAM. Each LLM request had a time limit of 600s and the maximum number of repetitions to generate a graph was 30.
 
-![Results of the internal validation](https://github.com/lindner-jonas/discovery_DCR_from_Text/tree/main/5_Test_Results/Results_Internal_Validation.png?raw=true)
+![Results of the internal validation](https://github.com/lindner-jonas/discovery_DCR_from_Text/blob/main/5_Test_Results/Results_Internal_Validation.png?raw=true)
 
 ### External Validation
 
-![Results of the external validation](https://github.com/lindner-jonas/discovery_DCR_from_Text/tree/main/7_External_Validation/Results_External_Validation.png?raw=true)
+![Results of the external validation](https://github.com/lindner-jonas/discovery_DCR_from_Text/blob/main/7_External_Validation/Results_External_Validation.png?raw=true)
 
 ## References
 <a id="1">[1]</a>
