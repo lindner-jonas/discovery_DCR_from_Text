@@ -39,7 +39,7 @@ Five prompts were defined with gradually increasing details:
 
 Two documents for RAG have been added.
 
-The first document (`DCR_concepts.txt`) includes an introduction to declarative process modelling, and definitions of DCR elements as well as some of its concepts. The content is based on the documentation on DCR from DCR Solutions (https://dcrsolutions.net/https://dcrsolutions.net/) as well as related papers ([[2]](#2),[[3]](#3)).
+The first document (`DCR_concepts.txt`) includes an introduction to declarative process modelling, and definitions of DCR elements as well as some of its concepts. The content is based on the documentation on DCR from DCR Solutions (https://dcrsolutions.net/) as well as related papers ([[2]](#2),[[3]](#3)).
 
 The second document (`Annotation_Guidelines_DCR_Laws.pdf`) are annotation guidelines that have previously been defined for the extraction of processes from texts including circumstantial information in the legal sector.
 
