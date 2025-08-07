@@ -86,7 +86,7 @@ We refer to Haystack (https://docs.haystack.deepset.ai/docs/pipelines) for the r
 pip install haystack-ai
 ```
 
-We use Ollama (https://github.com/ollama/ollama) to run the LLMs. It is very intuitive and let's one pull and run LLM locally. We used **Llama3.2 3B** and **Llama3.1 8B**.\
+We use Ollama (https://github.com/ollama/ollama) to run the LLMs. It is very intuitive and let's one pull and run LLM locally. We used **Llama3.2 3B** and **Llama3.1 8B**.
 ```
 curl -LO https://ollama.com/download/ollama-linux-amd64.tgz
 sudo tar -C /usr -xzf ollama-linux-amd64.tgz
@@ -100,7 +100,7 @@ In another terminal (but in the same environment), pull Llama3.2 (and Llama3.1, 
 ollama pull llama3.2
 ```
 
-We refer to Haystack's `OllamaGenerator` (https://docs.haystack.deepset.ai/docs/ollamagenerator) for the usage within the pipeline. Other providers of LLMs can be used as well, e.g., HuggingFace with the `HuggingFaceAPIGenerator`(https://docs.haystack.deepset.ai/docs/generators). \
+We refer to Haystack's `OllamaGenerator` (https://docs.haystack.deepset.ai/docs/ollamagenerator) for the usage within the pipeline. Other providers of LLMs can be used as well, e.g., HuggingFace with the `HuggingFaceAPIGenerator`(https://docs.haystack.deepset.ai/docs/generators). 
 ```
 pip install ollama-haystack
 ```
@@ -122,6 +122,7 @@ Other variables are required by the called notebooks. `models` lists the models 
 To run all pipelines, one has to start `run_pipelines.ipynb`. It calls all defined pipelines, for all prompts, with each process description, and runs them with all defined models.
 
 Due to gradually increasing detail in the prompts, the number of input tokens change. In order to use the availabel context-length more efficiently, we start Ollama by setting the environment variable `OLLAMA_CONTEXT_LENGTH` and then run the corresponding prompts:
+
 For Prompt 1:
 ```
 OLLAMA_CONTEXT_LENGTH=2500 ollama serve
