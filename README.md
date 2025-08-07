@@ -65,18 +65,52 @@ The threshold for roles is currently set to 0.7. The threshold for events (/acti
 
 ### Setup and Dependencies
 
-For our evaluation, we created an environment for python (3.13.2) with mamba (https://mamba.readthedocs.io/en/latest/index.html) and installed the following libraries and dependencies:
+For our evaluation, we created an environment for python (3.13.2) with mamba (https://mamba.readthedocs.io/en/latest/index.html).
+```
+mamba create -n DCRdiscovery python=3.13.2
+```
+One needs to enter the environment...
+```
+mamba activate DCRdiscovery
+```
+... and install the following libraries and dependencies:
 
 Every script is defined as a jupyter notebook, thus the `notebook` library is required. We also make use of common libraries like `os`, `numpy` and `path`.
-Additional libraries for the graph generation and analysis require `json`, `xml`, `datetime` and `xmltodict`.
+Additional libraries for the graph generation and analysis require `json`, `xml`, `datetime` and `xmltodict`. It's enough to do:
+```
+pip install notebook path numpy xmltodict datetime
+```
 
 We refer to Haystack (https://docs.haystack.deepset.ai/docs/pipelines) for the requirements of the pipelines, including the setup of retrieval augmented generation (RGA) (https://docs.haystack.deepset.ai/docs/retrievers).
+```
+pip install haystack-ai
+```
 
 We use Ollama (https://github.com/ollama/ollama) to run the LLMs. It is very intuitive and let's one pull and run LLM locally. We used **Llama3.2 3B** and **Llama3.1 8B**.\
+```
+curl -LO https://ollama.com/download/ollama-linux-amd64.tgz
+sudo tar -C /usr -xzf ollama-linux-amd64.tgz
+```
+Start Ollama:
+```
+ollama serve
+```
+In another terminal (but in the same environment), pull Llama3.2 (and Llama3.1, respectively)
+```
+ollama pull llama3.2
+```
+
 We refer to Haystack's `OllamaGenerator` (https://docs.haystack.deepset.ai/docs/ollamagenerator) for the usage within the pipeline. Other providers of LLMs can be used as well, e.g., HuggingFace with the `HuggingFaceAPIGenerator`(https://docs.haystack.deepset.ai/docs/generators). \
+```
+pip install ollama-haystack
+```
 If GPU usage is prefered or required by larger models, additional tools, e.g., PyTorch with CUDA support, have to be installed as well. 
 
+
 The similarity checks require `sentence-transformers` (https://www.sbert.net/docs/installation.html).
+```
+pip install -U sentence-transformers
+```
 
 ### Running the pipelines 
 
@@ -85,8 +119,22 @@ The pipelines that are defined in `3_Pipelines` are run with the `run_pipelines.
 The notebook includes global variables that refer to directory paths. It should therefore be run from the root directory where the notebook is located.\
 Other variables are required by the called notebooks. `models` lists the models for which the evaluation will be run. The model name is passed on to the OllamaGenerator. In this context, `llm_url` is used to pass a defined url to Ollama, in case Ollama is deployed on an external server and not locally. `loop_limit` limits the number of repetitions for each attempt to generate a graph from one process description. 
 
-To run all pipelines, one only has to start `run_pipelines.ipynb`. It calls all defined pipelines, for all prompts, with each process description, and runs them with all defined models.
+To run all pipelines, one has to start `run_pipelines.ipynb`. It calls all defined pipelines, for all prompts, with each process description, and runs them with all defined models.
 
+Due to gradually increasing detail in the prompts, the number of input tokens change. In order to use the availabel context-length more efficiently, we start Ollama by setting the environment variable `OLLAMA_CONTEXT_LENGTH` and then run the corresponding prompts:
+For Prompt 1:
+```
+OLLAMA_CONTEXT_LENGTH=2500 ollama serve
+```
+For Prompt 2,3,4:
+```
+OLLAMA_CONTEXT_LENGTH=5000 ollama serve
+```
+For Prompt 5:
+```
+OLLAMA_CONTEXT_LENGTH=20000 ollama serve
+```
+One can change the line `if prompt == "Pipeline_A1_Prompt_1.ipynb` (and ...A2... for Pipeline B, respectively) to assign the correct prompt, or delete it and run everything on OLLAMA_CONTEXT_LENGTH=20000.
 
 #### Validation Loop
 
